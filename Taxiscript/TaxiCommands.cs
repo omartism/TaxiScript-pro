@@ -1,11 +1,11 @@
-﻿using GTANetworkServer;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using GTANetworkServer;
 using GTANetworkShared;
 
-namespace RPGResource.Citizen
-{
     public class TaxiCommands : Script
     {
-    
         [Command("taxi")]
         public void calltaxi(Client sender)
         {
@@ -25,6 +25,8 @@ namespace RPGResource.Citizen
                 API.setEntityData(sender, "TAXI", true);
                 API.sendChatMessageToPlayer(sender, "~g~You are now a Taxi driver, once you recieve a notification, type /accept to take the task");
             }
+
+            else { API.setEntityPosition(sender, new Vector3(917.0233, -163.6854, 74.70861)); }
 
         }
 
@@ -51,4 +53,3 @@ namespace RPGResource.Citizen
 
     }
 
-}
