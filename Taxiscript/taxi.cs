@@ -27,22 +27,7 @@ namespace RPGResource.Citizen
 
             Infotaxi.onEntityEnterColShape += (shape, entity) =>
             {
-                Client player;
-                if ((player = API.getPlayerFromHandle(entity)) != null)
-                {
-                    if (API.getEntityData(player, "IS_COP") == true)
-                    {
-                        API.sendChatMessageToPlayer(player, "~r~You are a cop you can't be a taxi driver");
-                    }
-                    else
-                    {
-
                         API.sendChatMessageToPlayer(player, "~b~type /job to become a taxi driver");
-                    }
-
-                }
-
-
             };
 
         }

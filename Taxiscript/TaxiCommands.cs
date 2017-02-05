@@ -5,17 +5,12 @@ namespace RPGResource.Citizen
 {
     public class TaxiCommands : Script
     {
-        [Command("taxi")]
-        public void calltaxi(Client sender)
-        {
-            API.call("Taxi", "useTaxis", sender);
-            API.sendChatMessageToPlayer(sender, "~b~Calling a taxi for you");
-        }
+
 
         [Command("job")]
         public void startjob(Client sender)
         {
-            if (API.getEntityData(sender, "IS_COP") == false && (bool)API.call("Taxi", "isincircle", (NetHandle)sender.handle))
+            if ((bool)API.call("Taxi", "isincircle", (NetHandle)sender.handle))
             {
 
                 VehicleHash taxi = API.vehicleNameToModel("taxi");
