@@ -5,7 +5,13 @@ namespace RPGResource.Citizen
 {
     public class TaxiCommands : Script
     {
-
+    
+        [Command("taxi")]
+        public void calltaxi(Client sender)
+        {
+            API.call("Taxi", "useTaxis", sender);
+            API.sendChatMessageToPlayer(sender, "~b~Calling a taxi for you");
+        }
 
         [Command("job")]
         public void startjob(Client sender)
